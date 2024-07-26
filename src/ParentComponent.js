@@ -1,15 +1,15 @@
-import React from "react";
-import ChildComponent from "./ChildComponent";
+// import React from "react";
+// import ChildComponent from "./ChildComponent";
 
-class ParentComponent extends React.Component {
-    render() {
-        return (
-            <div>
-                <p>Parent Component</p>
-                <ChildComponent message={"Hello from parent!"} />
-            </div>
-        );
-    }
-}
+// class ParentComponent extends React.Component {
+//     render() {
+//         return (
+//             <div>
+//                 <p>Parent Component</p>
+//                 <ChildComponent message={"Hello from parent!"} />
+//             </div>
+//         );
+//     }
+// }
 
-export default ParentComponent;
+// export default ParentComponent;
