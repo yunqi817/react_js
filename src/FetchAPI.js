@@ -1,32 +1,21 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-class FetchAPI extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: [],
-        };
-    }
+const AxiosAPI = () => {
+  const [data, setData] = useState({});
 
-    componentDidMount() {
-        fetch("https://jsonplaceholder.typicode.com/users")
-            .then((response) => response.json())
-            .then((data) => {
-                this.setState({
-                    data: data,
-                });
-            });
-    }
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/posts/1')
+      .then(response => setData(response.data))
+      .catch(error => console.log(error));
+  }, []);
 
-    render() {
-        const { data } = this.state;
-        const listItems = data.map((item) => (
-            <li key={item.id}>
-                {item.name}, {item.email}
-            </li>
-        ));
-        return <ul>{listItems}</ul>;
-    }
+  return (
+    <div>
+      <h1>{data.title}</h1>
+      <p>{data.body}</p>
+    </div>
+  );
 }
 
-export default FetchAPI;
+export default AxiosAPI;

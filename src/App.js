@@ -1,13 +1,13 @@
 import React from "react";
-import FetchAPI from "./FetchAPI";
+import AxiosAPI from "./FetchAPI";
 
-function App() {
+const App = () => {
     return (
-        <div className="App">
-            <FetchAPI />
+        <div>
+            <AxiosAPI />
         </div>
     );
-}
+};
 
 export default App;
 
